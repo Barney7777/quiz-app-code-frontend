@@ -150,7 +150,7 @@ jobs:
           docker tag $APP_NAME:latest $ECR_REGISTRY/$ECR_REPOSITORY_DEV:latest
           docker tag $APP_NAME:latest $ECR_REGISTRY/$ECR_REPOSITORY_DEV:$IMAGE_TAG
           echo "Pushing Docker Image"
-          docker push $APP_NAME:latest $ECR_REGISTRY/$ECR_REPOSITORY_DEV:latest
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY_DEV:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY_DEV:$IMAGE_TAG
       
       - name: Tag and Push Docker Image to Prod ECR
