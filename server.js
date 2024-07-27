@@ -12,6 +12,11 @@ const __dirname = dirname(__filename);
 
 app.use(express.static(path.join(__dirname, "dist")));
 
+// Health check endpoint
+app.get("/health-check", (req, res) => {
+  res.status(200).json({ message: "Frontend is Healthy" });
+});
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
